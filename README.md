@@ -7,20 +7,20 @@ Project Code : https://github.com/masthanskk/loans-Application
 Here is a sample data you can create in loans tables
 Here is a sample data you can create in `loans` tables
 
-| ID | First Name | Last Name | Email | Loan Amount | Purpose | Status |
-|----|-----------|----------|-------|------------|---------|-------|
-| 1  | John      | Doe      | john.doe@example.com | 10000 | Home Improvement | Approved |
-| 2  | Jane      | Smith    | jane.smith@example.com | 5000 | Debt Consolidation | Approved |
-| 3  | Bob       | Johnson  | bob.johnson@example.com | 15000 | Business | Pending |
-| 4  | Emily     | Brown    | emily.brown@example.com | 8000 | Vacation | Approved |
-| 5  | Michael   | Davis    | michael.davis@example.com | 20000 | Education | Denied |
-| 6  | Sarah     | Wilson   | sarah.wilson@example.com | 12000 | Car Purchase | Approved 
+| ID | First Name | Last Name  | Email   | Loan Amount | Purpose | Status |
+|----|------------|------------|---------|------------|---------|-------|
+| 1  | John       | Doe        | john.doe@example.com | 10000 | Home Improvement | Approved |
+| 2  | Jane       | Smith      | jane.smith@example.com | 5000 | Debt Consolidation | Approved |
+| 3  | Bob        | Johnson    | bob.johnson@example.com | 15000 | Business | Pending |
+| 4  | Emily      | Brown      | emily.brown@example.com | 8000 | Vacation | Approved |
+| 5  | Michael    | Davis      | michael.davis@example.com | 20000 | Education | Denied |
+| 6  | Sarah      | Wilson     | sarah.wilson@example.com | 12000 | Car Purchase | Approved 
 
 
 
 ## Task 
-1. [ ] `CREATE` a table with `loans` name and define table columns as provide in above table in database
-1. [ ] create `INSERT` script for adding above provide data into 
+1. [ ] `CREATE` a table with `loans` name and define table columns as provide in above table in database.
+1. [ ] create `INSERT` script for adding above provide data into .
 1. [ ] `SELECT` all loan applications from the table.
 1. [ ] `SELECT` all loan applications with a status of "Approved".
 1. [ ] `SELECT` all loan applications with a loan amount greater than 10000.

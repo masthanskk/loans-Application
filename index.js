@@ -1,8 +1,13 @@
 // 786
 
 const express = require("express");        // ExpressJS to handle request body need to install (body-parser library )
-
 const bodyParser = require("body-parser");
+const sqlite3 = require("sqlite3");
+
+
+// db ni db.js ki connect chesina tharvatha aa db.js ni ekada import chesthunam
+
+const db = require("./db.js");
 
 // Creating an Express application
  const app = express();
@@ -14,12 +19,38 @@ const bodyParser = require("body-parser");
         res.json({
                 status:true,
                 Message : "Loan API running Sucessfull  "
-        })
+        });
  });
 
+ 
+
+// Get all loans applications
+app.get("/loans", function (request, response) {
+
+       db.serialize(function () {
+          const Selectquery = `SELECT * from loans`
+          db.all(Selectquery, (error, rows) => {
+            if (error) {
+               response.json({
+                 status: false,
+                 error: error
+               })
+             } else {
+               response.json({
+                 status: true,
+                loans: rows
+              })
+            }
+          })
+        })
+     })
+
 // Post API for NEW Loan Application
+
   app.post('/new-loan',(req,res) => {
      const loandata = req.body;
+
+
     //    const firstname = loandata.firstname;
     //    const lastname = loandata.lastname;
     //    const email = loandata.email;
@@ -32,6 +63,7 @@ const bodyParser = require("body-parser");
 
 
         if(!firstname){
+              
           //    return  res.status(400).json({
           //              status : false,
           //              error : "Please provide firstname"
