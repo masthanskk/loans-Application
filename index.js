@@ -1,19 +1,21 @@
 // 786
 
 const express = require("express");        // ExpressJS to handle request body need to install (body-parser library )
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); // Body Parser aneydhi manam json body format lo chupinchadaniki tesukuntam
 const sqlite3 = require("sqlite3");
 
 
-// db ni db.js ki connect chesina tharvatha aa db.js ni ekada import chesthunam
-
+// db ni db.js ki connect chesina tharvatha aa db.js ni ekada import chesthunam.
 const db = require("./db.js");
 
-// Creating an Express application
+//To connecting Express app to Database by using ** const sqlite3 = require("sqlite3"); **
+
+
+ // Creating an Express application
  const app = express();
  
  // Handle Json body request 
- app.use(bodyParser.json() );
+ app.use(bodyParser.json() );  // bodyParser ni JSON format lo chupistunam
 
  app.get('/', function (req,res) {
         res.json({
@@ -46,6 +48,8 @@ app.get("/loans", function (request, response) {
      })
 
 // Post API for NEW Loan Application
+// POST Api lo, manam postman lo insert chesina data ni tharvatha vs code lo request body handle cheyali,anduke const loandata = request.body
+
 
   app.post('/new-loan',(req,res) => {
      const loandata = req.body;
@@ -93,6 +97,7 @@ app.get("/loans", function (request, response) {
                 return senderrormessage(res, " Please provide purpose")
          }
 
+       
      function senderrormessage (res , errormessage){
         res.status(400).json({
                 status : false,
