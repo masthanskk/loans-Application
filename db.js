@@ -2,7 +2,18 @@
 
 const sqlite3 = require("sqlite3").verbose();
 
-// To database we need to open connection
+// Manam (Database browser ) lo em name tho aithe create loans.db ani create chesamo adaye name ni new sqlite3.Database ki connect chesthunam 
+// loans.db anaye database file ni, db.js nundi operate chesthunam  next
+// db.js ni index.js ki export chesthunam
+
+/*const db = new sqlite3.Database("./loans.db", function (error) {
+        if(error) {
+                console.error(error)   ========>>>> This will also work just ekada functionality change chesam anthe
+        }
+        console.log("DATABASE CONNECTED.....")
+})*/
+
+// To database we need to open connection // 
 
 const db = new sqlite3.Database("./loans.db", sqlite3.OPEN_READWRITE, (error)  => {
         if (error) {
